@@ -50,6 +50,18 @@ feedback-system/
 
 ```
 
+## Screenshots
+
+**Success:**  
+<img width="956" height="914" alt="Screenshot 2026-05-03 115702" src="https://github.com/user-attachments/assets/2ee0a389-c074-47ea-8f63-a81ee53ad276" />
+
+
+
+
+**Error:**  
+<img width="945" height="893" alt="Screenshot 2026-05-03 115716" src="https://github.com/user-attachments/assets/05b58f18-46ca-4733-a07f-ae1b1e3c0ff1" />
+
+
 ---
 
 ## How to Run Locally
