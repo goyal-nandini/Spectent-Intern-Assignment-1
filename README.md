@@ -53,7 +53,7 @@ feedback-system/
 
 **Step 1 — Clone the repository**
 ```bash
-git clone <your-repo-link>
+git clone https://github.com/goyal-nandini/Spectent-Intern-Assignment-1.git
 cd feedback-system
 ```
 
@@ -213,5 +213,5 @@ At scale, you need to know when the server is slow or down before users complain
 
 ---
 
-*Submitted by: Nandini | SPECTENT SERVICES PRIVATE LIMITED | Internship Assignment | 03.05.2026*
+*Submitted by: Nandini Goyal | SPECTENT SERVICES PRIVATE LIMITED | Internship Assignment | 03.05.2026*
 
