@@ -198,7 +198,6 @@ I chose in-memory storage (a JavaScript array) because the assignment explicitly
 |---|---|
 | In-memory storage | Fast to set up, but data is lost on every server restart |
 | No authentication | API is open — anyone can submit, no way to identify users |
-| Single HTML file for frontend | Simple and portable, but doesn't scale if the UI grows |
 | No logging | Easier to read code, but hard to debug issues in production |
 
 ---
