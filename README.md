@@ -1,4 +1,11 @@
 # Feedback Form System
+---
+
+🔗 **[Live Demo](https://spectent-intern-assignment--nandini-goyal.replit.app/)**
+
+
+
+
 ### SPECTENT SERVICES PRIVATE LIMITED — Intern Assignment: Build, Break & Explain
 
 ---
@@ -53,13 +60,13 @@ feedback-system/
 ## Screenshots
 
 **Success:**  
-<img width="956" height="914" alt="Screenshot 2026-05-03 115702" src="https://github.com/user-attachments/assets/2ee0a389-c074-47ea-8f63-a81ee53ad276" />
+<img width="1075" height="861" alt="Screenshot 2026-05-03 135343" src="https://github.com/user-attachments/assets/8221cbc0-b71f-48ff-9b69-dc0daf44e40c" />
 
 
 
 
 **Error:**  
-<img width="945" height="893" alt="Screenshot 2026-05-03 115716" src="https://github.com/user-attachments/assets/05b58f18-46ca-4733-a07f-ae1b1e3c0ff1" />
+<img width="1079" height="852" alt="Screenshot 2026-05-03 135407" src="https://github.com/user-attachments/assets/a49f2880-39a9-43a7-a6dd-0645f3a9acf2" />
 
 
 ---
@@ -68,7 +75,7 @@ feedback-system/
 
 **Step 1 — Clone the repository**
 ```bash
-git clone https://github.com/goyal-nandini/Spectent-Intern-Assignment-1.git
+git clone https://github.com/goyal-nandini/Spectent-Intern-Assignment.git
 cd feedback-system
 ```
 
