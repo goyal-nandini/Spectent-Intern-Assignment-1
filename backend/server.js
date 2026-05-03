@@ -1,15 +1,15 @@
 import express from "express";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
+import Database from "@replit/database";
+
+const db = new Database();
 
 const app = express();
 const PORT = 3000;
 
 app.use(cors({ origin: "*" }));
 app.use(express.json());
-
-// In-memory store
-const feedbacks = [];
 
 // FIX 3: Rate limiting — max 5 requests/min per IP
 const feedbackLimiter = rateLimit({
@@ -25,7 +25,7 @@ function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
 }
 
-app.post("/feedback", feedbackLimiter, (req, res) => {
+app.post("/feedback", feedbackLimiter, async (req, res) => {
   let { name, email, feedback } = req.body;
 
   // FIX 1: Trim whitespace before validation
@@ -65,20 +65,25 @@ app.post("/feedback", feedbackLimiter, (req, res) => {
     submittedAt: new Date().toISOString(),
   };
 
-  feedbacks.push(entry);
+ await db.set(`feedback_${Date.now()}`, JSON.stringify(entry));
 
-  return res.status(201).json({
-    success: true,
-    message: "Feedback submitted successfully!",
-    totalFeedbacks: feedbacks.length,
-    data: entry,
-  });
+return res.status(201).json({
+  success: true,
+  message: "Feedback submitted successfully!",
+  data: entry,
 });
 
 // Health check
 app.get("/", (req, res) => {
   res.json({ status: "Server is running", totalFeedbacks: feedbacks.length });
 });
+  
+app.get("/feedbacks", async (req, res) => {
+  const keys = await db.list("feedback_");
+  const all = await Promise.all(keys.map(k => db.get(k)));
+  res.json({ success: true, count: all.length, data: all });
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
