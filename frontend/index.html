@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Submit Feedback</h1>
+    <form id="feedbackForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your name" maxlength="100" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="you@example.com" />
+
+      <label for="feedback">Feedback</label>
+      <textarea id="feedback" placeholder="Write your feedback..." maxlength="2000"></textarea>
+
+      <button type="submit" id="submitBtn">Submit Feedback</button>
+    </form>
+    <div class="message" id="message"></div>
+    <p class="feedback-count" id="feedbackCount" hidden></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
