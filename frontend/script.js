@@ -1,13 +1,11 @@
 const form = document.getElementById("feedbackForm");
 const submitBtn = document.getElementById("submitBtn");
 const messageDiv = document.getElementById("message");
-const feedbackCount = document.getElementById("feedbackCount");
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
     messageDiv.className = "message";
     messageDiv.textContent = "";
-    feedbackCount.hidden = true;
 
     const name     = document.getElementById("name").value;
     const email    = document.getElementById("email").value;
@@ -30,13 +28,8 @@ form.addEventListener("submit", async (e) => {
         messageDiv.textContent = data.message;
         messageDiv.className = "message success";
         form.reset();
-        const total = data.totalFeedbacks ?? data?.data?.id;
-        if (total !== undefined) {
-            feedbackCount.textContent = `Total feedback submitted: ${total}`;
-            feedbackCount.hidden = false;
-        }
     } else {
-        messageDiv.textContent = data.error || "An error occurred.";
+        messageDiv.textContent = data.error;
         messageDiv.className = "message error";
     }
     } catch (err) {
