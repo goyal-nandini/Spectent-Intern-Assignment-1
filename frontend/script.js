@@ -16,7 +16,7 @@ form.addEventListener("submit", async (e) => {
     submitBtn.textContent = "Submitting...";
 
     try {
-    const res = await fetch("/feedback", {
+    const res = await fetch("http://localhost:3000/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, feedback }),
