@@ -2,11 +2,12 @@ import express from "express";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
 import Database from "@replit/database";
+import path from "path";
 
 const db = new Database();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors({ origin: "*" }));
 app.use(express.json());
@@ -84,6 +85,7 @@ app.get("/feedbacks", async (req, res) => {
   res.json({ success: true, count: all.length, data: all });
 });
 
+app.use(express.static(path.join(__dirname, "../frontend")));
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
